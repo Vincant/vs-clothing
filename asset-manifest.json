@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/vs-clothing/static/css/main.e99c746e.chunk.css",
+    "main.js": "/vs-clothing/static/js/main.6a556820.chunk.js",
+    "main.js.map": "/vs-clothing/static/js/main.6a556820.chunk.js.map",
+    "runtime~main.js": "/vs-clothing/static/js/runtime~main.bdc3399a.js",
+    "runtime~main.js.map": "/vs-clothing/static/js/runtime~main.bdc3399a.js.map",
+    "static/js/2.b71b94f6.chunk.js": "/vs-clothing/static/js/2.b71b94f6.chunk.js",
+    "static/js/2.b71b94f6.chunk.js.map": "/vs-clothing/static/js/2.b71b94f6.chunk.js.map",
+    "index.html": "/vs-clothing/index.html",
+    "precache-manifest.49cb214048bef28c129b8576b739c176.js": "/vs-clothing/precache-manifest.49cb214048bef28c129b8576b739c176.js",
+    "service-worker.js": "/vs-clothing/service-worker.js",
+    "static/css/main.e99c746e.chunk.css.map": "/vs-clothing/static/css/main.e99c746e.chunk.css.map",
+    "static/media/logo.19ef7b17.svg": "/vs-clothing/static/media/logo.19ef7b17.svg",
+    "static/media/shopping-bag.30f07071.svg": "/vs-clothing/static/media/shopping-bag.30f07071.svg"
+  }
+}
