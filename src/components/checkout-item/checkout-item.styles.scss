@@ -1,0 +1,35 @@
+.checkout-item {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid darkgrey;
+  padding: 15px 0;
+  font-size: 1.33rem; //20px
+  align-items: center;
+  .image{
+    padding-right: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .value{
+    padding: 0 0.67rem;
+  }
+  .arrow, .remove{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  .arrow{
+    font-weight: bold;
+    &.disabled{
+      color: #ccc;
+      cursor: default;
+    }
+  }
+  .remove {
+    color: red;
+    cursor: pointer;
+  }
+}

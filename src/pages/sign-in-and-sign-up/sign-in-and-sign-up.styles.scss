@@ -1,0 +1,39 @@
+.sign-in-and-sign-up{
+  max-width: 850px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  
+  .sign-in, .sign-up{
+    width: 50%;
+    max-width: 380px;
+    .title{
+      margin: 0.66rem 0;
+    }
+  }
+  .sign-up{
+    margin-left: 1.33rem;
+  }
+}
+
+// @media 768+ //
+@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait){
+  .sign-in-and-sign-up{
+    flex-flow: column;
+    
+    .sign-in, .sign-up{
+      width: 100%;
+      margin: 0 auto 2rem;
+    }
+  }
+}
+
+// @media 479+ //
+@media handheld, only screen and (max-width: 479px), only screen and (max-device-width: 479px) and (orientation:portrait){
+  .sign-in-and-sign-up{
+    .custom-button{
+      min-width: 100%;
+    }
+  }
+}
+
