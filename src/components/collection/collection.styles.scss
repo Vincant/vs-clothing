@@ -1,0 +1,15 @@
+.collection{
+  .collection-title{
+    text-align: center;
+  }
+  .collection-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem -0.67rem;
+  }
+  .show-more{
+    margin: 0 auto;
+  }
+}
+

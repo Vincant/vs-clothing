@@ -10,7 +10,7 @@ import ShopPage from './pages/shop/shop.component';
 import ContactPage from './pages/contact/contact.component';
 import SingInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
-import Page404 from './pages/404/404.component';
+//import Page404 from './pages/404/404.component';
 import './App.scss';
 
 class App extends React.Component {
@@ -91,7 +91,7 @@ class App extends React.Component {
               } 
             />
             <Route exact path='/checkout' component={CheckoutPage}></Route>
-            <Route component={Page404}></Route>
+            <Route render={() => (<Redirect to='/' />)}></Route>
           </Switch>
         </div>
       </div>

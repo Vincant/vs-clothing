@@ -2,20 +2,18 @@
   flex: 1 1 33%;
   min-width: 33%;
   position: relative;
-  padding: 0.5rem;
+  padding: 0.67rem;
   &:hover{
     cursor: pointer;
     .image{
-      transform: scale(1.1);
-      transition: all 3s;
-      //transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      img{
+        transform: scale(1.1);
+        transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
     }
     .content {
       opacity: 0.9;
     }
-  }
-  &.large{
-    height: 24rem; //360px
   }
   .box{
     height: 16rem; //240px
@@ -23,12 +21,18 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    overflow: hidden;
   }
   .image{
-    object-fit: cover;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.01); // fix image bug (because use flex: 1 1 33%)
+      transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
   }
   .content {
     position: absolute;

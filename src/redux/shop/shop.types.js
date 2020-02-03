@@ -1,0 +1,4 @@
+export const ShopActionTypes = {
+  SHOW_MORE_ITEMS: 'SHOW_MORE_ITEMS',
+  CLEAR_DISPLAYED_ITEMS: 'CLEAR_DISPLAYED_ITEMS'
+}

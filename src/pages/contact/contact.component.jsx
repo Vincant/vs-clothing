@@ -2,8 +2,8 @@ import React from 'react';
 import './contact.styles.scss';
 
 const ContactPage = () => (
-  <div>
-    CONTACT
+  <div className='grid'>
+    CONTACT PAGE NOT READY YET
   </div>
 )
 
