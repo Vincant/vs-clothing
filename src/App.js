@@ -14,39 +14,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import './App.scss';
 
 class App extends React.Component {
-  /*  
-  constructor(){
-    super();
-
-    this.state = {
-      currentUser: null
-    }
-  }
-
-  unsubscribeFromAuth = null;
-
-  componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
-
-      if(userAuth){
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser: {
-              id: snapShot.id,
-              ...snapShot.data()
-            }
-          })
-          //console.log(this.state)
-        });
-      } 
-      else{
-        this.setState({currentUser: userAuth});
-      }
-    })
-  }*/   //no Redux
-
+  
   componentDidMount(){
     const {setCurrentUser} = this.props
 
