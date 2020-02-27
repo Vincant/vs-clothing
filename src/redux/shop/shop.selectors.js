@@ -23,24 +23,31 @@ export const selectNewItems = createSelector(
 export const selectCollection = collectionUrl => createSelector(
   [selectCollections, selectDisplayedItems, selectNewItems],
   (collections, displayedItems, newItems) => {
-    const collection = collections[collectionUrl] // find in object
-    const items = collection.items;
-    const totalItems = items.length;   
-    const showItems = displayedItems + newItems;
+    if(collections){
+      const collection = collections[collectionUrl] // find in object
+      const items = collection.items;
+      const totalItems = items.length;   
+      const maxItems = displayedItems + newItems;
+      
+      const filtredItems = items.filter((item, index) => 
+            displayedItems <= index && index < maxItems && index < totalItems)  
 
-    const filtredItems = items.filter((item, index) => 
-          displayedItems <= index && index < showItems && index < totalItems)  
-
-    const getBtnState = () => {
-      return showItems < totalItems
-        ? true
-        : false
+      const getBtnState = () => {
+        return maxItems < totalItems
+          ? true
+          : false
+      }
+      return {...collection, items: filtredItems, btnState: getBtnState()};
+    } 
+    else{
+      return null;
     }
-    return {...collection, items: filtredItems, btnState: getBtnState()};
   }
 );
 // used in collections-overview.component
-export const selectCollectionForOwerview = createSelector(
+export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  collections => Object.keys(collections).map(key => collections[key])  // object to array
+  collections => collections
+  ? Object.keys(collections).map(key => collections[key])  // object to array
+  : []  // need for fix error (if got null instead object)
 );

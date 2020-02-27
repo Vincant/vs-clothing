@@ -11,6 +11,7 @@ const firebaseConfig = {
   messagingSenderId: "893961345961",
   appId: "1:893961345961:web:b24337771a3af27ea002b8"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -35,9 +36,39 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log('error creating user', error.massage);
     }
   }
-
   return userRef;
-}
+};
+
+//use just one times for create database (collections) in Firebase
+  export const addCollectionAndDocuments = async (key, collectionsAray) => {
+    const collectionRef = firestore.collection(key);
+    const batch = firestore.batch();
+
+    collectionsAray.forEach( collection => {
+      const newDocRef = collectionRef.doc();
+      batch.set(newDocRef, collection);
+    });
+
+    return await batch.commit();
+  };
+
+ // convert snapshot docs to Array collections
+export const convertCollectionsSnapShot = collections => {
+  const convertedCollections = collections.docs.map( doc => {
+    const { title, items } = doc.data();  // doc.data(); one collection
+    return{
+      routeName: encodeURI(title.toLowerCase()),  // hats
+      id: doc.id,
+      title,
+      items
+    };
+  });
+  // convert array to object
+  return convertedCollections.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
 
 // base exports
 export const auth = firebase.auth();

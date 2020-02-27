@@ -11,13 +11,15 @@ import ContactPage from './pages/contact/contact.component';
 import SingInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 //import Page404 from './pages/404/404.component';
+//import { addCollectionAndDocuments } from './firebase/firebase.utils'; // init collections
+//import { selectCollectionsForPreview } from './redux/shop/shop.selectors'; // init collections
 import './App.scss';
 
 class App extends React.Component {
   
   componentDidMount(){
     const {setCurrentUser} = this.props
-
+    //const {setCurrentUser, collectionsAray} = this.props  // init collections
     this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
 
       if(userAuth){
@@ -33,6 +35,10 @@ class App extends React.Component {
       else{
         setCurrentUser(userAuth);
       }
+      /*use just one times for create database (collections) in Firebase. (init collections)
+        addCollectionAndDocuments('collections', collectionsAray); // base variant (key, array); // init collections
+        addCollectionAndDocuments('collections', collectionsAray.map( ({title, items}) => ({title, items}) ));  (refactor database, use just title and items)
+      */
     })
   }
 
@@ -70,6 +76,7 @@ class App extends React.Component {
 //from State put prop to Props  // used Library Reselect
 const mapStateToProps = (state) => ({      
   currentUser: selectCurrentUser(state)
+  //collectionsAray: selectCollectionsForPreview(state)  // init collections
 })
 
 //from Dispatch put Actions to Props
