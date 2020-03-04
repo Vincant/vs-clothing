@@ -53,9 +53,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   };
 
  // convert snapshot docs to Array collections
-export const convertCollectionsSnapShot = collections => {
-  const convertedCollections = collections.docs.map( doc => {
-    const { title, items } = doc.data();  // doc.data(); one collection
+export const convertCollectionsSnapShot = snapshot => {
+  const convertedCollections = snapshot.docs.map( doc => {
+    const { title, items } = doc.data(); 
     return{
       routeName: encodeURI(title.toLowerCase()),  // hats
       id: doc.id,

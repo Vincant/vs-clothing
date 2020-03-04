@@ -1,15 +1,12 @@
 import { createSelector } from 'reselect';
 
 const selectShop = state => state.shop;
-const selectDisplayedItems = state => state.shop.displayedItems;
-const selectNewItems = state => state.shop.newItems;
 
 // used in shop.component
 export const selectCollections = createSelector(
   [selectShop],
   shop => shop.collections
 );
-/*
 export const selectDisplayedItems = createSelector(
   [selectShop],
   shop => shop.displayedItems
@@ -18,7 +15,7 @@ export const selectNewItems = createSelector(
   [selectShop],
   shop => shop.newItems
 );
-*/
+
 //used in collection.component
 export const selectCollection = collectionUrl => createSelector(
   [selectCollections, selectDisplayedItems, selectNewItems],
@@ -44,6 +41,7 @@ export const selectCollection = collectionUrl => createSelector(
     }
   }
 );
+
 // used in collections-overview.component
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],

@@ -32,15 +32,15 @@ class App extends React.Component {
           })
         });
       } 
-      else{
-        setCurrentUser(userAuth);
-      }
+      
+      setCurrentUser(userAuth); // = null
+      
       /*use just one times for create database (collections) in Firebase. (init collections)
         addCollectionAndDocuments('collections', collectionsAray); // base variant (key, array); // init collections
         addCollectionAndDocuments('collections', collectionsAray.map( ({title, items}) => ({title, items}) ));  (refactor database, use just title and items)
       */
-    })
-  }
+    }, error => console.log(error));
+  };
 
   componentWillUnmount(){
     this.unsubscribeFromAuth();
